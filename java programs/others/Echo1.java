@@ -1,0 +1,12 @@
+/** This java class is to demonstrate the first Java language code */
+/** Author: Srivarun */
+
+public class Echo1 {
+/** Main method to run the program*/
+
+  public static void main(String args[]) {
+/* Printing out the first argument */
+      System.out.println( "You entered:::"+args[0]);
+
+  }
+}

@@ -1,0 +1,6 @@
+java
+jsps
+mcb2
+txtpd
+wrdpd
+gedit

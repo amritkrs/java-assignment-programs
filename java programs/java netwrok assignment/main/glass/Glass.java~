@@ -1,0 +1,82 @@
+package main.glass;
+
+import java.io.*;
+import java.net.*;
+import java.util.Random;
+
+public class Glass
+{
+	static Random num = new Random();	
+	public static void playGame(BufferedReader in, PrintWriter out)
+	{
+		int ans = num.nextInt();
+		int numGlass = 2;
+		int i=6;
+		int response;
+		
+	  try
+	  {
+		
+		out.println(printRule());
+		while(i >= 1)
+		{
+			out.println("You have " + numGlass.toString() + " glass left and " + i.toString() + " guess left ");
+			out.println("Enter the step number : ");
+			response = Integer.parseInt(in.readLine());
+			if(response > ans)
+			{
+				numGlass = numGlass - 1;
+				out.println("Sorry ,you broke the glass ");
+				if(numGlass = 0)
+				{
+					output.println("Sorry , You lost the game, you have no glass left");
+					output.println("The correct step was " + ans.toString() );
+					return;
+				}
+				out.println("You have " + numGlass.toString() + " left");
+			}
+			else if(response < ans)
+			{
+				out.println("You guessed below the threshold");
+			}
+			else if(response == ans)
+			{
+				out.println("YOU WIN ");
+				out.println("Want to Play Again <y/n> : ");
+				if(in.readLine().equals("y"))
+					Glass.playGame(in,out);
+				return;
+			}
+			else
+			{
+				out.println("INVALID REPLY");
+			}
+			i = i-1;
+		}
+			
+			output.println("DEFEAT");
+			out.println("Want to Play Again <y/n> : ");
+			if(in.readLine().equals("y"))
+				Glass.playGame(in,out);
+			return;
+			
+	   }	
+	   catch(IOException e)
+	   {
+	   		System.out.println(e);
+	   }
+	}
+	
+	public static String printRule()
+	{
+		String s;
+		s = "These are the rules EOF";
+		return s;
+	}
+}
+			
+				
+				
+				
+			
+		

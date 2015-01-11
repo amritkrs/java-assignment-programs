@@ -1,0 +1,41 @@
+public class TestSorter
+{
+	public static void main( String args[] ) 
+	{
+		int j,ans;
+		ArraySorter myarray;
+		if( args.length >= 1 )
+		{
+			myarray = new ArraySorter(Integer.parseInt(args[0]));
+		}
+		else
+		{
+			 myarray = new ArraySorter();
+		}
+		try
+		{
+			myarray.getSorted();
+			myarray.print();
+		//	j = getInt("\nEnter the number to search in array ");
+		//	ans = myarray.search(j);
+		}
+		catch( IllegalArgumentException e)
+		{
+			System.out.println(e);
+			System.out.println(e.getCause());
+			e.printStackTrace();
+		}
+		catch( ArrayIndexOutOfBoundsException e)
+		{
+			System.out.println(e);
+			e.printStackTrace();
+		}
+		finally
+		{
+			myarray = null;
+		}
+	
+		
+		
+	}
+}
